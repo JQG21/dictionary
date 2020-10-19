@@ -5,28 +5,40 @@
 
     <TableRow>
 
-        <TextView android:text="单词" />
+        <TextView android:text="@string/word" />
 
         <EditText
             android:id="@+id/txtWord"
-            android:layout_width="match_parent" />
+            android:layout_width="match_parent"
+            android:autofillHints=""
+            android:inputType=""
+            android:hint="@string/input_word"
+            />
     </TableRow>
 
     <TableRow>
 
-        <TextView android:text="含义" />
+        <TextView android:text="@string/mean" />
 
         <EditText
             android:id="@+id/txtMeaning"
-            android:layout_width="match_parent" />
+            android:layout_width="match_parent"
+            android:autofillHints=""
+            android:inputType=""
+            android:hint="@string/explain"
+            />
     </TableRow>
 
     <TableRow>
 
-        <TextView android:text="示例" />
+        <TextView android:text="@string/instance" />
 
         <EditText
             android:id="@+id/txtSample"
-            android:layout_width="match_parent" />
+            android:layout_width="match_parent"
+            android:autofillHints=""
+            android:inputType=""
+            android:hint="@string/word_instance"
+            />
     </TableRow>
 </TableLayout>
