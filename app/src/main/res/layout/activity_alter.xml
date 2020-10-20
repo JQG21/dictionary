@@ -41,4 +41,8 @@
             android:hint="@string/word_instance"
             />
     </TableRow>
+    <Button
+        android:layout_height="wrap_content"
+        android:text="@string/ok"
+        />
 </TableLayout>
