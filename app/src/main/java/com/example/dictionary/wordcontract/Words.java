@@ -19,11 +19,6 @@ public class Words {
             this.id = id;
             this.word = word;
         }
-
-        @Override
-        public String toString() {
-            return word;
-        }
     }
 
     //每个单词的描述
