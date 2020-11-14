@@ -31,6 +31,7 @@ import com.example.dictionary.wordcontract.Words;
     }
 
     public ProviderTest() {
+        mDbHelper = new WordsDBHelper(getContext());
     }
 
     //删除数据
@@ -38,7 +39,7 @@ import com.example.dictionary.wordcontract.Words;
     public int delete(Uri uri, String selection, String[] selectionArgs) {
 
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
-        int count  = 0;
+        int count;
         switch (uriMatcher.match(uri)) {
             case MULTIPLE_WORDS:
                 count = db.delete(Words.Word.TABLE_NAME, selection, selectionArgs);
@@ -117,7 +118,7 @@ import com.example.dictionary.wordcontract.Words;
     public int update(Uri uri, ContentValues values, String selection,
                       String[] selectionArgs) {
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
-        int count = 0;
+        int count;
         switch (uriMatcher.match(uri)) {
             case MULTIPLE_WORDS:
                 count = db.update(Words.Word.TABLE_NAME, values, selection, selectionArgs);

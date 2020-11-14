@@ -25,7 +25,7 @@ public class WordItemFragment extends ListFragment {
 
 
     //当前是否为横屏
-    private boolean currentIsLand;
+
 
 
     private OnFragmentInteractionListener mListener;
@@ -39,6 +39,7 @@ public class WordItemFragment extends ListFragment {
         return fragment;
     }
     public WordItemFragment() {
+
     }
 
     @Override

@@ -36,7 +36,7 @@ public class Words {
         }
     }
 
-    public static final String AUTHORITY = "cn.edu.bistu.cs.se.wordsprovider";//URI授权者
+    public static final String AUTHORITY = "com.example.dictionary.ProviderTest";//URI授权者
 
     public Words() {
     }

@@ -1,11 +1,9 @@
 package com.example.dictionary;
 
-import android.app.Activity;
+import android.app.Fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
-import android.provider.UserDictionary;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,8 +11,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.dictionary.wordcontract.Words;
-
-import org.w3c.dom.Text;
 
 
 
@@ -57,10 +53,6 @@ public class WordDetailFragment extends Fragment {
         }
     }
 
-    private void YoudaoOpenAPI(String strWord){
-
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -71,9 +63,9 @@ public class WordDetailFragment extends Fragment {
         WordsDB wordsDB=WordsDB.getWordsDB();
 
         if(wordsDB!=null && mID!=null){
-            TextView textViewWord=(TextView)view.findViewById(R.id.word);
-            TextView textViewWordMeaning=(TextView)view.findViewById(R.id.wordmeaning);
-            TextView textViewWordSample=(TextView)view.findViewById(R.id.wordsample);
+            TextView textViewWord= view.findViewById(R.id.word);
+            TextView textViewWordMeaning= view.findViewById(R.id.wordmeaning);
+            TextView textViewWordSample= view.findViewById(R.id.wordsample);
 
             Words.WordDescription item=wordsDB.getSingleWord(mID);
             if(item!=null){
@@ -123,7 +115,7 @@ public class WordDetailFragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        public void onWordDetailClick(Uri uri);
+        void onWordDetailClick(Uri uri);
 
     }
 

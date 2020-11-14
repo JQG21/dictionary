@@ -1,34 +1,20 @@
 package com.example.dictionary;
 
 import android.app.AlertDialog;
-import android.app.Fragment;
-import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.ContextMenu;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.AdapterView;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TableLayout;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.example.dictionary.WordsDB;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import com.example.dictionary.wordcontract.Words;
 
@@ -82,15 +68,12 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        switch (id) {
-            case R.id.action_search:
-                //查找
-                SearchDialog();
-                return true;
-            case R.id.action_insert:
-                //新增单词
-                InsertDialog();
-                return true;
+        if (id == R.id.action_search) {//查找
+            SearchDialog();
+            return true;
+        } else if (id == R.id.action_insert) {//新增单词
+            InsertDialog();
+            return true;
         }
 
 
@@ -275,9 +258,7 @@ public class MainActivity extends AppCompatActivity
         return true;
         */
 
-        if(getResources().getConfiguration().orientation== Configuration.ORIENTATION_LANDSCAPE)
-            return true;
-        return false;
+        return getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
     }
 
     private void ChangeWordDetailFragment(String id){
