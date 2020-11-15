@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity
         WordsDB wordsDB=WordsDB.getWordsDB();
         if (wordsDB != null)
             wordsDB.close();
-
     }
 
 
@@ -131,8 +130,6 @@ public class MainActivity extends AppCompatActivity
                 })
                 .create()//创建对话框
                 .show();//显示对话框
-
-
     }
 
 
@@ -280,8 +277,6 @@ public class MainActivity extends AppCompatActivity
     public void onUpdateDialog(String strId) {
         WordsDB wordsDB= WordsDB.getWordsDB();
         if (wordsDB != null && strId != null) {
-
-
             Words.WordDescription item = wordsDB.getSingleWord(strId);
             if (item != null) {
                 UpdateDialog(strId, item.word, item.meaning, item.sample);
